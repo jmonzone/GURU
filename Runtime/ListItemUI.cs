@@ -55,8 +55,9 @@ namespace GURU
 
 public abstract class ListItemUI<T> : MonoBehaviour where T : ListItemData
 {
-    public override sealed void SetData(ListItemData data)
+    public override void SetData(ListItemData data)
     {
+        base.SetData(data);
         ApplyData(data as T);
     }
 
