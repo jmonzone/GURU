@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "displayName": "GURU",
   "description": "Game Utilities and Resources for Unity.",
-  "unity": "2022.3",
+  "unity": "2020.3",
   "author": {
     "name": "Jonan"
   },

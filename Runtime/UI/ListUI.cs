@@ -1,65 +1,68 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Manages a list of UI items, allowing for dynamic creation and updating of list item data.
-/// </summary>
-public class ListUI : MonoBehaviour
+namespace GURU.UI
 {
     /// <summary>
-    /// The anchor point for positioning list items.
+    /// Manages a list of UI items, allowing for dynamic creation and updating of list item data.
     /// </summary>
-    [SerializeField, Tooltip("The Transform where list items will be anchored.")]
-    private Transform itemAnchor;
-
-    /// <summary>
-    /// The prefab used to create list items.
-    /// </summary>
-    [SerializeField, Tooltip("The prefab used to instantiate list items.")]
-    private ListItemUI itemPrefab;
-
-    private List<ListItemUI> items = new List<ListItemUI>();
-
-    /// <summary>
-    /// Initializes the list UI by retrieving existing list items.
-    /// </summary>
-    private void Awake()
+    public class ListUI : MonoBehaviour
     {
-        itemAnchor.GetComponentsInChildren(includeInactive: true, items);
+        /// <summary>
+        /// The anchor point for positioning list items.
+        /// </summary>
+        [SerializeField, Tooltip("The Transform where list items will be anchored.")]
+        private Transform itemAnchor;
 
-        foreach (var item in items)
+        /// <summary>
+        /// The prefab used to create list items.
+        /// </summary>
+        [SerializeField, Tooltip("The prefab used to instantiate list items.")]
+        private ListItemUI itemPrefab;
+
+        private List<ListItemUI> items = new List<ListItemUI>();
+
+        /// <summary>
+        /// Initializes the list UI by retrieving existing list items.
+        /// </summary>
+        private void Awake()
         {
-            item.gameObject.SetActive(false);
-        }
-    }
+            itemAnchor.GetComponentsInChildren(includeInactive: true, items);
 
-    /// <summary>
-    /// Sets the items displayed in the list based on the provided data.
-    /// </summary>
-    /// <param name="data">A list of data representing the items to display.</param>
-    public void SetItems(List<ListItemData> data)
-    {
-        int existingCount = items.Count;
-        int requiredCount = data.Count;
-
-        if (existingCount < requiredCount)
-        {
-            for (int i = existingCount; i < requiredCount; i++)
+            foreach (var item in items)
             {
-                var item = Instantiate(itemPrefab, itemAnchor);
-                items.Add(item);
+                item.gameObject.SetActive(false);
             }
         }
 
-        for (int i = 0; i < items.Count; i++)
+        /// <summary>
+        /// Sets the items displayed in the list based on the provided data.
+        /// </summary>
+        /// <param name="data">A list of data representing the items to display.</param>
+        public void SetItems(List<ListItemData> data)
         {
-            if (i < requiredCount)
+            int existingCount = items.Count;
+            int requiredCount = data.Count;
+
+            if (existingCount < requiredCount)
             {
-                items[i].SetData(data[i]);
+                for (int i = existingCount; i < requiredCount; i++)
+                {
+                    var item = Instantiate(itemPrefab, itemAnchor);
+                    items.Add(item);
+                }
             }
-            else
+
+            for (int i = 0; i < items.Count; i++)
             {
-                items[i].gameObject.SetActive(false);
+                if (i < requiredCount)
+                {
+                    items[i].SetData(data[i]);
+                }
+                else
+                {
+                    items[i].gameObject.SetActive(false);
+                }
             }
         }
     }
