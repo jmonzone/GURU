@@ -1,3 +1,4 @@
+using GURU;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -50,4 +51,14 @@ namespace GURU
             gameObject.SetActive(true);
         }
     }
+}
+
+public abstract class ListItemUI<T> : MonoBehaviour where T : ListItemData
+{
+    public override sealed void SetData(ListItemData data)
+    {
+        ApplyData(data as T);
+    }
+
+    protected abstract void ApplyData();
 }
