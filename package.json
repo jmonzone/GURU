@@ -2,12 +2,12 @@
   "name": "com.jmonzone.guru",
   "version": "1.0.0",
   "displayName": "GURU",
-  "description": "Game utilities and resources for Unity.",
+  "description": "Game Utilities and Resources for Unity.",
   "unity": "2022.3",
   "author": {
-    "name": "Johnnan Monzon"
+    "name": "Jonan"
   },
-    "dependencies": {
-        "com.unity.textmeshpro": "3.0.4"
-    }
+  "dependencies": {
+    "com.unity.textmeshpro": "3.0.4"
+  }
 }
