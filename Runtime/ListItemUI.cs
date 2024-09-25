@@ -61,5 +61,5 @@ public abstract class ListItemUI<T> : ListItemUI where T : ListItemData
         ApplyData(data as T);
     }
 
-    protected abstract void ApplyData();
+    protected abstract void ApplyData<T>(T data);
 }
