@@ -1,13 +1,14 @@
 {
-  "name": "com.jmonzone.guru",
-  "version": "1.0.0",
-  "displayName": "GURU",
-  "description": "Game Utilities and Resources for Unity.",
-  "unity": "2020.3",
-  "author": {
-    "name": "Jonan"
-  },
-  "dependencies": {
-    "com.unity.textmeshpro": "3.0.4"
-  }
+    "name": "com.jmonzone.guru",
+    "version": "1.0.0",
+    "displayName": "GURU",
+    "description": "Game Utilities and Resources for Unity.",
+    "unity": "2020.3",
+    "type": "tool",
+    "author": {
+        "name": "Jonan"
+    },
+    "dependencies": {
+        "com.unity.textmeshpro": "3.0.4"
+    }
 }
