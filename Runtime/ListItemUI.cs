@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace GURU.UI
+namespace GURU
 {
     /// <summary>
     /// Represents data for a list item, including a label and a click action.

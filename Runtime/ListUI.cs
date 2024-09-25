@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GURU.UI
+namespace GURU
 {
     /// <summary>
     /// Manages a list of UI items, allowing for dynamic creation and updating of list item data.

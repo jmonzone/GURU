@@ -4,7 +4,6 @@
   "displayName": "GURU",
   "description": "Game Utilities and Resources for Unity.",
   "unity": "2020.3",
-  "type": "tool",
   "author": {
     "name": "Jonan"
   },
