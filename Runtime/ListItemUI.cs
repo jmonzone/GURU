@@ -8,7 +8,7 @@ namespace GURU
     /// <summary>
     /// Represents data for a list item, including a label and a click action.
     /// </summary>
-    public struct ListItemData
+    public class ListItemData
     {
         /// <summary>
         /// The label displayed for the list item.
@@ -42,7 +42,7 @@ namespace GURU
         /// Sets the data for the list item UI.
         /// </summary>
         /// <param name="data">The data to display in the list item, including the label and click action.</param>
-        public void SetData(ListItemData data)
+        public virtual void SetData(ListItemData data)
         {
             label.text = data.label;
             button.onClick.RemoveAllListeners();
